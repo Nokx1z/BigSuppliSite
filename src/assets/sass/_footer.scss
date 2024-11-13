@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+footer {
+    background-color: $footer-bg;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+
+    .social-media a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+}

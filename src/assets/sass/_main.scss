@@ -1,0 +1,12 @@
+@import 'variables';
+@import 'reset';
+@import 'navbar';
+@import 'footer';
+@import 'productos';
+@import 'contacto';
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: $neutral-color;
+}
