@@ -283,5 +283,85 @@ footer .social-media a {
 body {
   font-family: "NombreDeLaFuente", sans-serif;
 }
+.caja-servicio{
+  display: flex;
+  flex-direction: row;
+  
+}
+.caja-servicio h1{
+  color: #F4991C;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  text-align: center;
+  margin-top: 6%;
+  margin-right: 5%;
+  margin-left: -2%;
+  border-bottom: 5px double #F4991C;
+  padding-bottom: 20px;
 
-/*# sourceMappingURL=main.css.map */
+}
+.mapa-bigsuppli img{
+  width: 400px;
+  height: 300px;
+  border-radius: 2px ;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-right: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.mapa-bigsuppli img:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.cajadetexto{
+    display: flex;
+    color: black;
+    border-radius: 2px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+
+}
+.cajadetexto p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  text-align: justify;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.boton-descargar {
+  text-decoration: none;
+  background-color: #309BD7;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/*manual de usuario*/
+
+#manual{
+  color: #F4991C;
+  font-size: 32px ;
+  text-align: center;
+  margin-left: -4%;
+  .fa-book{
+      color: #F4991C;
+      text-align: center;
+  }
+}
+#manual p{
+  text-align: center;
+
+}
+.ventana-manual{
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-family:Arial, Helvetica, sans-serif;
+}
