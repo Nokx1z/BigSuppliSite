@@ -19,6 +19,7 @@ body {
   width: 100%;
 }
 
+/* Estilo principal del navbar */
 .navbar {
   background-color: #309BD7;
   display: flex;
@@ -32,22 +33,20 @@ body {
   width: 100%;
   z-index: 1000;
   border-bottom: 2px solid #2980b9;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 20px 25px;
 }
 
 .navbar-logo img {
   height: 50px;
   width: auto;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .navbar-logo img:hover {
   transform: scale(1.1);
 }
 
-/* -----------------------------------------
-   Estilo para los enlaces del navbar
------------------------------------------ */
+/* Enlaces del navbar */
 .navbar-item {
   color: white;
   text-decoration: none;
@@ -66,9 +65,7 @@ body {
   border-radius: 10px;
 }
 
-/* -----------------------------------------
-   Estilo para el menú desplegable (dropdown)
------------------------------------------ */
+/* Dropdown del navbar */
 .navbar .dropdown {
   position: relative;
 }
@@ -118,9 +115,7 @@ body {
   display: block;
 }
 
-/* -----------------------------------------
-   Estilo para el botón de menú hamburguesa
------------------------------------------ */
+/* Menú hamburguesa */
 .navbar .menu-toggle {
   display: none;
   cursor: pointer;
@@ -133,14 +128,12 @@ body {
   transform: rotate(90deg);
 }
 
-/* -----------------------------------------
-   Estilos para el checkbox del menú hamburguesa
------------------------------------------ */
+/* Estilos para el checkbox del menú hamburguesa */
 .navbar .menu-toggle-checkbox {
   display: none;
 }
 
-.navbar .menu-toggle-checkbox:checked + .menu-toggle + .navbar-item {
+.navbar .menu-toggle-checkbox:checked + .menu-toggle + .navbar-items {
   display: block;
 }
 
@@ -149,9 +142,7 @@ body {
   color: white;
 }
 
-/* -----------------------------------------
-   Estilos para dispositivos pequeños (pantallas <= 768px)
------------------------------------------ */
+/* Estilos para dispositivos pequeños (pantallas <= 768px) */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -183,21 +174,23 @@ body {
     color: white;
   }
 
+  /* Inicialmente ocultamos los elementos del menú */
+  .navbar .navbar-items {
+    display: none;
+    width: 100%;
+  }
+
   .navbar .navbar-item, .navbar .dropdown .dropbtn {
     font-size: 18px;
   }
 
-  .navbar .navbar-item {
-    display: none;
-  }
-
-  .navbar .menu-toggle-checkbox:checked + .menu-toggle + .navbar-item {
-    display: block;
+  /* Estilos de transición para cuando el menú se abre */
+  .navbar .navbar-items {
+    transition: all 0.3s ease;
   }
 }
 
 /* Títulos */
-
 h1 {
   margin: 10px 0;
 }
@@ -207,7 +200,6 @@ h3 {
   margin-bottom: 10px;
   color: #F4991C;
 }
-
 
 /* Sección principal */
 
@@ -288,8 +280,6 @@ margin-top: 20px;
   
 }
 
-
-
 /* Contenedor de productos */
 
 .productos-container {
@@ -358,10 +348,7 @@ margin-top: 20px;
   border-radius: 8px;
   /* Opcional: agrega bordes redondeados a la imagen */
 }
-
-
 /* Pie de página */
-
 footer {
   background-color: #309BD7;
   color: white;
@@ -378,19 +365,16 @@ footer .social-media a {
 
 
 /* Medias queries para responsividad */
-
 @media (max-width: 768px) {
   .producto {
       flex: 1 1 calc(50% - 20px);
   }
 }
-
 @media (max-width: 480px) {
   .producto {
       flex: 1 1 100%;
   }
 }
-
 
 /* Sección de contacto */
 
@@ -476,43 +460,53 @@ footer .social-media a {
   font-size: 20px;
 }
 
+/* Estilos del banner */
 .banner {
-  width: 100%; /* Ajusta el ancho según tus necesidades */
-  height: 50vh; /* Ajusta la altura según tus necesidades */
+  width: 100%; /* Ancho completo */
+  height: 60vh; /* Altura relativa más alta */
   overflow: hidden;
   position: relative;
-  padding-top: 60px; /* Esto ajusta el espacio superior del banner */
+  padding-top: 500px; /* Más espacio superior */
   margin-top: 80px;
+  display: flex; /* Centrado del contenido */
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+  border-radius: 30px; /* Aumenta la curvatura de las esquinas */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  background-color: #f5f5f5; /* Fondo neutro para resaltar las imágenes */
 }
 
+/* Imágenes del banner */
 .banner img {
-
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  width: 100%; /* Ajusta al ancho del contenedor */
+  height: 100%; /* Ajusta al alto del contenedor */
+  object-fit: contain; /* Mantiene la proporción sin recorte */
+  opacity: 0; /* Inicialmente oculta */
+  transition: opacity 1s ease-in-out; /* Suaviza la transición de visibilidad */
 }
 
-/* Aquí aplicaremos las clases para cada imagen y sus animaciones */
+/* Animaciones para cada imagen */
 .imagen1 {
-  animation: slide 10s infinite;
+  animation: slide 10s infinite 10s;
 }
 
 .imagen2 {
-  animation: slide 10s infinite 3s;
+  animation: slide 10s infinite 10s;
 }
 
 .imagen3 {
-  animation: slide 10s infinite 6s;
+  animation: slide 10s infinite 10s;
 }
 
-
+/* Keyframes para la animación */
 @keyframes slide {
-  0% { opacity: 0; }
-  20% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; }
+  0%, 33.33% {
+    opacity: 1; /* Imagen visible */
+  }
+  66.67%, 100% {
+    opacity: 0; /* Imagen oculta */
+  }
 }
