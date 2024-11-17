@@ -8,18 +8,21 @@
   </head>
 
   <body>
-    <header>
-      <img src="../../assets/img/logo.png" width="50" height="50" alt="Logo Big Suppli" />
-      <h1>Big Suppli</h1>
-    </header>
-    <nav>
-      <div class="navbar">
-        <!-- Enlace Inicio -->
-        <a href="index.html" class="inicio">
+    <header class="header">
+      <nav class="navbar">
+        <a href="index.html" class="navbar-logo">
+          <img src="../../assets/img/logo.png" width="50" height="50" alt="Logo Big Suppli" loading="lazy" />
+        </a>
+    
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" />
+        <label for="menu-toggle" class="menu-toggle">
+          <i class="fa fa-bars"></i>
+        </label>
+    
+        <a href="index.html" class="navbar-item inicio">
           <i class="fa fa-home"></i> Inicio
         </a>
     
-        <!-- Menú desplegable sobre Nosotros -->
         <div class="dropdown">
           <button class="dropbtn">
             <i class="fa fa-address-book" aria-hidden="true"></i> Sobre Nosotros
@@ -31,27 +34,23 @@
           </div>
         </div>
     
-        <!-- Enlace Contacto -->
-        <a href="Contacto.html">
+        <a href="Contacto.html" class="navbar-item">
           <i class="fa fa-phone-square" aria-hidden="true"></i> Contacto
         </a>
     
-        <!-- Enlace Servicio -->
-        <a href="servicio.html">
+        <a href="servicio.html" class="navbar-item">
           <i class="fa fa-handshake-o" aria-hidden="true"></i> Servicio
         </a>
     
-        <!-- Enlace Catalogo Productos -->
-        <a href="productos.html">
+        <a href="productos.html" class="navbar-item">
           <i class="fa fa-shopping-cart" aria-hidden="true"></i> Catálogo Productos
         </a>
     
-        <!-- Enlace Ayuda -->
-        <a href="Ayuda.html">
+        <a href="Ayuda.html" class="navbar-item">
           <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Ayuda
         </a>
-      </div>
-    </nav>
+      </nav>
+    </header>
     
     <footer>
       <h4>Contáctenos</h4>

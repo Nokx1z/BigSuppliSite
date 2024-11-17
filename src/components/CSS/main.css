@@ -1,126 +1,296 @@
-@charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=NombreDeLaFuente:wght@400;700&display=swap");
-/* _navbar.scss */
-/* Variables */
-/* Fondo del navbar */
-/* Hover del navbar */
-/* Fondo sutil en el hover */
-/* Fondo de los dropdowns */
-/* Hover de dropdown */
+/* Estilo general */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Variables */
-/* Fondo del navbar */
-/* Hover del navbar */
-/* Fondo de los dropdowns */
-/* Hover de dropdown */
-.navbar {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #309BD7;
-  padding: 10px 20px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 9999;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  gap: 20px;
-  /* Elementos dentro del navbar */
-  /* Estilo del botón dropdown */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
-.navbar a {
+
+
+/* Encabezado */
+
+.header {
+  width: 100%;
+}
+
+.navbar {
+  background-color: #309BD7;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 2px solid #2980b9;
+  border-radius: 0 0 10px 10px;
+}
+
+.navbar-logo img {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.1);
+}
+
+/* -----------------------------------------
+   Estilo para los enlaces del navbar
+----------------------------------------- */
+.navbar-item {
   color: white;
   text-decoration: none;
-  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  font-size: 16px;
   font-weight: 500;
-  padding: 10px 20px;
-  border-radius: 25px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  position: relative;
   text-transform: capitalize;
-  /* Eliminación de la línea blanca */
+  position: relative;
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
 }
-.navbar a i {
-  margin-right: 8px;
-}
-.navbar a:hover, .navbar a:focus {
+
+.navbar-item:hover {
   background-color: #F4991C;
-  color: white;
+  transform: translateY(-3px);
+  border-radius: 10px;
 }
-.navbar a:after {
-  content: none;
-}
+
+/* -----------------------------------------
+   Estilo para el menú desplegable (dropdown)
+----------------------------------------- */
 .navbar .dropdown {
   position: relative;
 }
+
 .navbar .dropdown .dropbtn {
-  background-color: #309BD7;
+  background-color: transparent;
   color: white;
   border: none;
-  padding: 10px 20px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
 }
-.navbar .dropdown .dropbtn i {
-  margin-right: 8px;
+
+.navbar .dropdown:hover .dropbtn {
+  color: #F4991C;
 }
-.navbar .dropdown .dropbtn:hover, .navbar .dropdown .dropbtn:focus {
-  background-color: #F4991C;
-  color: white;
-}
+
 .navbar .dropdown .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #2d8ca3;
+  background-color: #2980b9;
   min-width: 160px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  border-radius: 5px;
-  padding: 10px 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.navbar .dropdown .dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 400;
-  text-transform: capitalize;
-}
-.navbar .dropdown .dropdown-content a:hover {
-  background-color: rgba(0, 0, 0, 0.15);
-}
-.navbar .dropdown:hover .dropdown-content {
-  display: block;
-  opacity: 1;
+  border-radius: 10px;
+  top: 100%;
+  left: 0;
 }
 
-footer {
+.navbar .dropdown .dropdown-content a {
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+  display: block;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.navbar .dropdown .dropdown-content a:hover {
+  background-color: #3498db;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* -----------------------------------------
+   Estilo para el botón de menú hamburguesa
+----------------------------------------- */
+.navbar .menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.navbar .menu-toggle:hover {
+  transform: rotate(90deg);
+}
+
+/* -----------------------------------------
+   Estilos para el checkbox del menú hamburguesa
+----------------------------------------- */
+.navbar .menu-toggle-checkbox {
+  display: none;
+}
+
+.navbar .menu-toggle-checkbox:checked + .menu-toggle + .navbar-item {
+  display: block;
+}
+
+.navbar .menu-toggle-checkbox:checked + .menu-toggle {
   background-color: #309BD7;
   color: white;
-  text-align: center;
+}
+
+/* -----------------------------------------
+   Estilos para dispositivos pequeños (pantallas <= 768px)
+----------------------------------------- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navbar .logo img {
+    height: 30px;
+    margin-bottom: 1rem;
+  }
+
+  .navbar .navbar-item {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    font-size: 18px;
+    border-bottom: 1px solid #f4f4f9;
+  }
+
+  .navbar .dropdown .dropdown-content {
+    position: static;
+    min-width: 100%;
+    box-shadow: none;
+  }
+
+  .navbar .menu-toggle {
+    display: block;
+    font-size: 40px;
+    color: white;
+  }
+
+  .navbar .navbar-item, .navbar .dropdown .dropbtn {
+    font-size: 18px;
+  }
+
+  .navbar .navbar-item {
+    display: none;
+  }
+
+  .navbar .menu-toggle-checkbox:checked + .menu-toggle + .navbar-item {
+    display: block;
+  }
+}
+
+/* Títulos */
+
+h1 {
+  margin: 10px 0;
+}
+
+h2,
+h3 {
+  margin-bottom: 10px;
+  color: #F4991C;
+}
+
+
+/* Sección principal */
+
+main {
   padding: 20px;
+}
+.reseña{
+  display: flex;
+  text-align: justify;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #fff;
+  /* Fondo blanco para la ventana */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  padding: 20px;
+  /* Espaciado interno */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* Sombra */
   margin-top: 20px;
+  /* Margen superior para separación */
+  
 }
-footer .social-media a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
+.reseña img{
+  flex: 0 0 auto;
+  margin-right: 10%;
+  height: 40%;
+  width: 40%;
 }
+.reseña p{
+  font-size: 16PX;
+  font-family: Arial, sans-serif;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+.noticias ul{
+  align-items: center;
+  text-align: justify;
+  
+}
+.fa-book{
+  color: black;
+  width: 15%;
+  height: 15%;
+  padding: 20px;
+}
+.vision-titulo{
+  text-align: center;
+  font-size: 25px;
+  color: #F4991C;
+}
+.vision{
+display: flex;
+text-align: justify;
+flex-direction: row;
+justify-content: space-between;
+background-color: #fff;
+/* Fondo blanco para la ventana */
+border-radius: 10px;
+/* Bordes redondeados */
+padding: 20px;
+/* Espaciado interno */
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+/* Sombra */
+margin-top: 20px;
+/* Margen superior para separación */
+}
+.vision img{    flex: 0 0 auto;
+  margin-right: 10%;
+  height: 40%;
+  width: 40%;}
+.vision p{
+      font-size: 25PX;
+      color: black;
+      font-family: Arial, sans-serif;
+      margin-right: 5%;
+      margin-top: 2%;
+  
+}
+
+
+
+/* Contenedor de productos */
 
 .productos-container {
   display: flex;
@@ -128,7 +298,8 @@ footer .social-media a {
   justify-content: space-between;
   margin-left: 20px;
 }
-.productos-container .producto {
+
+.producto {
   border: 2px solid gray;
   background-color: #fdfdfd;
   color: #F4991C;
@@ -138,71 +309,148 @@ footer .social-media a {
   flex: 1 1 calc(25% - 20px);
   text-align: center;
   min-width: 220px;
+  /* Asegura que el producto tenga un ancho mínimo */
 }
-.productos-container .producto h3 {
-  color: black;
+
+.productos-container h3 {
+  color: black; /* Naranja para los títulos */
   font-size: 18px;
   margin-bottom: 10px;
   font-family: Cursive;
   font-weight: bold;
 }
-.productos-container .producto .price {
-  color: #F4991C;
+
+.productos-container .price{
+  color: #F4991C; /* Naranja para los títulos */
   font-size: 16px;
   margin-bottom: 1px;
   font-family: cursive;
   font-weight: bold;
-  text-align: left;
+  text-align: lef;
 }
-.productos-container .producto img {
-  border-radius: 1px;
+
+.producto img {
+  border-radius:1px;
   max-width: 80%;
   height: 300px;
 }
 
-/* _contacto.scss */
+/* Estilo de la ventana con sombra */
+
+.ventana {
+  background-color: #fff;
+  /* Fondo blanco para la ventana */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  padding: 20px;
+  /* Espaciado interno */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* Sombra */
+  margin-top: 20px;
+  /* Margen superior para separación */
+}
+
+.ventana img {
+  width: 100%;
+  /* Asegura que la imagen ocupe el 100% del ancho del contenedor */
+  height: 500px;
+  /* Mantiene la proporción de la imagen */
+  border-radius: 8px;
+  /* Opcional: agrega bordes redondeados a la imagen */
+}
+
+
+/* Pie de página */
+
+footer {
+  background-color: #309BD7;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+footer .social-media a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+
+/* Medias queries para responsividad */
+
+@media (max-width: 768px) {
+  .producto {
+      flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .producto {
+      flex: 1 1 100%;
+  }
+}
+
+
+/* Sección de contacto */
+
 #contacto {
   padding: 20px;
   background-color: #F8F8F8;
   border-radius: 8px;
   margin-top: 20px;
 }
-#contacto .contacto-container {
+
+.contacto-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-#contacto .contacto-container .contacto-info {
+
+
+/* Información de contacto */
+
+.contacto-info {
   flex: 1;
   min-width: 300px;
   margin-right: 20px;
 }
-#contacto .contacto-container .contacto-info h3 {
+
+.contacto-info h3 {
   margin-bottom: 10px;
 }
-#contacto .contacto-container .contacto-info p {
+
+.contacto-info p {
   margin-bottom: 10px;
 }
-#contacto .contacto-container .contacto-form {
+
+
+/* Formulario de contacto */
+
+.contacto-form {
   flex: 1;
   min-width: 300px;
 }
-#contacto .contacto-container .contacto-form h3 {
+
+.contacto-form h3 {
   margin-bottom: 10px;
 }
-#contacto .contacto-container .contacto-form label {
+
+.contacto-form label {
   display: block;
   margin-bottom: 5px;
 }
-#contacto .contacto-container .contacto-form input,
-#contacto .contacto-container .contacto-form textarea {
+
+.contacto-form input,
+.contacto-form textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-#contacto .contacto-container .contacto-form button {
+
+.contacto-form button {
   background-color: #309BD7;
   color: white;
   border: none;
@@ -210,12 +458,61 @@ footer .social-media a {
   border-radius: 5px;
   cursor: pointer;
 }
-#contacto .contacto-container .contacto-form button:hover {
+
+.contacto-form button:hover {
   background-color: #2478B7;
 }
 
-body {
-  font-family: "NombreDeLaFuente", sans-serif;
+
+/* Redes sociales */
+
+.social-media {
+  margin-top: 10px;
 }
 
-/*# sourceMappingURL=main.css.map */
+.social-media a {
+  color: #309BD7;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.banner {
+  width: 100%; /* Ajusta el ancho según tus necesidades */
+  height: 50vh; /* Ajusta la altura según tus necesidades */
+  overflow: hidden;
+  position: relative;
+  padding-top: 60px; /* Esto ajusta el espacio superior del banner */
+  margin-top: 80px;
+}
+
+.banner img {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Aquí aplicaremos las clases para cada imagen y sus animaciones */
+.imagen1 {
+  animation: slide 10s infinite;
+}
+
+.imagen2 {
+  animation: slide 10s infinite 3s;
+}
+
+.imagen3 {
+  animation: slide 10s infinite 6s;
+}
+
+
+@keyframes slide {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}

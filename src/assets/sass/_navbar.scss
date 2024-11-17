@@ -1,55 +1,39 @@
-/* Variables */
-$navbar-bg: #309BD7;   /* Fondo del navbar */
-$navbar-hover: #F4991C; /* Hover del navbar */
-$navbar-text-color: white;
-$dropdown-bg: #2d8ca3;  /* Fondo de los dropdowns */
-$dropdown-hover-bg: rgba(0, 0, 0, 0.15); /* Hover de dropdown */
+@use 'variables' as *;
 
+/* Navbar */
 .navbar {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   background-color: $navbar-bg;
-  padding: 10px 20px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 9999;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem; // Reemplazo de $spacing-base
+  box-shadow: $box-shadow;
 
-  /* Elementos dentro del navbar */
-  a {
-    display: flex;
-    align-items: center;
+  position: fixed;  /* Fijar el navbar en la parte superior */
+  top: 0;           /* Asegura que esté en la parte superior */
+  left: 0;          /* Alineado con el borde izquierdo */
+  width: 100%;      /* Hace que el navbar ocupe todo el ancho */
+  z-index: 1000;    /* Asegura que el navbar esté por encima de otros elementos */
+  
+  .navbar-item {
     color: $navbar-text-color;
     text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    position: relative;
-    text-transform: capitalize;
+    padding: 0.5rem 1rem; // Reemplazo de $spacing-small y $spacing-base
+    display: flex;
+    align-items: center;
+    font-size: $font-size-base;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $menu-item-hover-bg;
+    }
 
     i {
-      margin-right: 8px;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: $navbar-hover;
-      color: $navbar-text-color;
-    }
-
-    /* Eliminación de la línea blanca */
-    &:after {
-      content: none;
+      margin-right: 0.5rem; // Reemplazo de $spacing-small
     }
   }
 
-  /* Estilo del botón dropdown */
+  /* Dropdown */
   .dropdown {
     position: relative;
 
@@ -57,23 +41,19 @@ $dropdown-hover-bg: rgba(0, 0, 0, 0.15); /* Hover de dropdown */
       background-color: $navbar-bg;
       color: $navbar-text-color;
       border: none;
-      padding: 10px 20px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      border-radius: 25px;
+      padding: 0.5rem 1rem; // Reemplazo de $spacing-small y $spacing-base
+      font-size: $font-size-base;
       cursor: pointer;
       display: flex;
       align-items: center;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.3s ease;
 
-      i {
-        margin-right: 8px;
+      &:hover {
+        background-color: $navbar-hover;
       }
 
-      &:hover,
-      &:focus {
-        background-color: $navbar-hover;
-        color: $navbar-text-color;
+      i {
+        margin-left: 0.5rem; // Reemplazo de $spacing-small
       }
     }
 
@@ -82,20 +62,14 @@ $dropdown-hover-bg: rgba(0, 0, 0, 0.15); /* Hover de dropdown */
       position: absolute;
       background-color: $dropdown-bg;
       min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
       z-index: 1;
-      border-radius: 5px;
-      padding: 10px 0;
-      opacity: 0;
-      transition: opacity 0.3s ease;
 
       a {
-        color: white;
-        padding: 12px 16px;
+        color: $dropdown-text-color;
+        padding: 0.5rem; // Reemplazo de $spacing-small
         text-decoration: none;
-        font-size: 1rem;
-        font-weight: 400;
-        text-transform: capitalize;
+        display: block;
 
         &:hover {
           background-color: $dropdown-hover-bg;
@@ -105,7 +79,79 @@ $dropdown-hover-bg: rgba(0, 0, 0, 0.15); /* Hover de dropdown */
 
     &:hover .dropdown-content {
       display: block;
-      opacity: 1;
     }
   }
+
+  /* Mobile menu */
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: $navbar-text-color;
+  }
+
+  .menu-toggle-checkbox {
+    display: none; /* Ocultar el checkbox en el HTML */
+  }
+
+  .menu-toggle-checkbox:checked + .menu-toggle + .navbar-item {
+    display: block;
+  }
+
+  /* Estilos del checkbox y el icono */
+  .menu-toggle-checkbox:checked + .menu-toggle {
+    background-color: $navbar-bg; /* Ajusta el color de fondo al activar el menú */
+    color: $navbar-text-color; /* Color del icono cuando el menú está activo */
+  }
+
+  /* Media Queries */
+  @media (max-width: $breakpoint-mobile) {
+    .navbar {
+      flex-direction: column;
+    }
+
+    .navbar-item {
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem; // Reemplazo de $spacing-small
+      display: none; /* Ocultar el menú por defecto en dispositivos móviles */
+    }
+
+    .dropdown {
+      width: 100%;
+      text-align: center;
+
+      .dropdown-content {
+        width: 100%;
+      }
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+
+    /* Mostrar el menú cuando el checkbox esté marcado */
+    .menu-toggle-checkbox:checked + .menu-toggle + .navbar-item {
+      display: block;
+    }
+
+    /* Estilo del menú cuando el checkbox está activado */
+    .menu-toggle-checkbox:checked + .menu-toggle + .navbar-item {
+      background-color: $navbar-bg;
+      padding: 0.5rem; // Reemplazo de $spacing-small
+      text-align: center;
+    }
+
+    /* Ajustes para el icono del checkbox (hamburguesa) */
+    .menu-toggle {
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 10; /* Asegura que el icono sea visible */
+    }
+  }
+}
+
+/* Añadir margen superior al contenido para evitar que quede cubierto por el navbar fijo */
+body {
+  padding-top: 70px; /* Ajusta según la altura de tu navbar */
 }

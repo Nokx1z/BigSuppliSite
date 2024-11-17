@@ -1,19 +1,67 @@
-$primary-color: #309BD7;
-$secondary-color: #F4991C;
-$neutral-color: #333;
-$light-bg: cornsilk;
-$dark-bg: #f9f9f9;
-$hover-color: #ddd;
-$border-color: #309BD7;
-$footer-bg: $primary-color;
+@use 'sass:color';
 
-/* _navbar.scss */
+/* Colores */
+$primary-color: #309BD7;        // Color principal
+$secondary-color: #F4991C;      // Color secundario
+$neutral-color: #333;           // Color neutral (para textos)
+$light-bg: white;               // Fondo claro
+$dark-bg: #f9f9f9;              // Fondo oscuro
+$hover-color: #ddd;             // Color base para hover
+$border-color: $primary-color;  // Color de borde
+$footer-bg: #309BD7;            // Fondo del pie de página
 
-/* Variables */
-$navbar-bg: #309BD7;   /* Fondo del navbar */
-$navbar-hover: #F4991C; /* Hover del navbar */
-$navbar-text-color: white;
-$menu-item-hover-bg: rgba(0, 0, 0, 0.1);  /* Fondo sutil en el hover */
-$dropdown-bg: #2d8ca3;  /* Fondo de los dropdowns */
-$dropdown-hover-bg: rgba(0, 0, 0, 0.15); /* Hover de dropdown */
-$dropdown-text-color: #FFFFFF;
+/* Colores para Navbar */
+$navbar-bg: $primary-color;                           // Fondo del navbar
+$navbar-hover: color.scale($secondary-color, $lightness: -10%); // Fondo al pasar el mouse en el navbar
+$navbar-text-color: white;                            // Color de texto en el navbar
+$menu-item-hover-bg: rgba(0, 0, 0, 0.1);             // Fondo al pasar el mouse en los items del navbar
+$menu-item-hover-text-color: $secondary-color;       // Color del texto al hacer hover sobre los items del navbar
+$dropdown-bg: #2d8ca3;                               // Fondo del dropdown
+$dropdown-hover-bg: rgba(0, 0, 0, 0.15);             // Fondo al pasar el mouse sobre el dropdown
+$dropdown-text-color: #FFFFFF;                        // Color de texto en el dropdown
+$dropdown-hover-text-color: $secondary-color;        // Color del texto del dropdown al hacer hover
+
+/* Colores de interacción */
+$focus-color: #5b9bd5;  // Color al enfocar elementos
+$active-color: #3077b6;  // Color al activar elementos
+$disabled-color: #d1d1d1; // Color para elementos deshabilitados
+
+/* Colores de alerta */
+$success-color: #28a745; // Color de éxito
+$warning-color: #ffc107; // Color de advertencia
+$error-color: #dc3545;   // Color de error
+$info-color: #17a2b8;    // Color de información
+
+/* Fuentes y tipografía */
+$font-family-base: 'Arial', sans-serif;
+$font-family-heading: 'Helvetica', sans-serif;
+$font-size-base: 16px;
+$font-size-heading: 2rem;
+$font-size-subheading: 1.5rem;
+$font-size-button: 14px;
+$font-size-input: 14px;
+$font-size-label: 12px;
+
+/* Espaciado y márgenes */
+$spacing-large: 2rem;
+$spacing-small: 0.5rem;
+$spacing-xlarge: 3rem;
+$spacing-medium: 1.5rem;
+
+/* Bordes y sombras */
+$border-radius: 8px;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+/* Fondos de secciones */
+$section-bg-light: #fafafa;
+$section-bg-dark: #f1f1f1;
+
+/* Transiciones */
+$transition-fast: 0.3s ease;
+$transition-medium: 0.5s ease;
+$transition-slow: 1s ease;
+
+/* Breakpoints para dispositivos */
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1200px;

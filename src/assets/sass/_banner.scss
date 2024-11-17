@@ -1,0 +1,19 @@
+/* Banner */
+.banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    img {
+      object-fit: contain; /* Asegura que la imagen se vea completa en móviles */
+    }
+  }
+}

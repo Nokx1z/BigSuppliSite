@@ -10,3 +10,41 @@ body {
     line-height: 1.6;
     color: $neutral-color;
 }
+
+/* Main content */
+main {
+    padding: $spacing-large;
+  
+    .section {
+      margin-bottom: $spacing-large;
+  
+      h2 {
+        font-size: $font-size-heading;
+        margin-bottom: $spacing-small;
+      }
+  
+      h3 {
+        font-size: $font-size-subheading;
+        margin-top: $spacing-base;
+      }
+  
+      p {
+        font-size: $font-size-base;
+      }
+    }
+  
+    @media (max-width: $breakpoint-mobile) {
+      .section {
+        padding: $spacing-small;
+      }
+  
+      h2 {
+        font-size: 1.5rem;
+      }
+  
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+  
