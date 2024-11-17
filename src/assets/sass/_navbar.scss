@@ -1,178 +1,111 @@
-@use 'variables' as *;
+/* Variables */
+$navbar-bg: #309BD7;   /* Fondo del navbar */
+$navbar-hover: #F4991C; /* Hover del navbar */
+$navbar-text-color: white;
+$dropdown-bg: #2d8ca3;  /* Fondo de los dropdowns */
+$dropdown-hover-bg: rgba(0, 0, 0, 0.15); /* Hover de dropdown */
 
 .navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $navbar-bg;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  gap: 20px;
+
+  /* Elementos dentro del navbar */
+  a {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: $navbar-bg;
+    color: $navbar-text-color;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
     padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 9999;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  
-    /* Logo */
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 600;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    text-transform: capitalize;
+
+    i {
+      margin-right: 8px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $navbar-hover;
       color: $navbar-text-color;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-  
-      /* Si tienes una imagen de logo */
-      img {
-        height: 40px;
-        margin-right: 10px;
-      }
     }
-  
-    /* Menú principal */
-    .menu {
-      display: flex;
-      list-style: none;
-      margin-left: auto;
-      gap: 20px;
-  
-      /* Elementos de menú */
-      a {
-        color: $navbar-text-color;
-        text-decoration: none;
-        font-size: 1.1rem;
-        font-weight: 500;
-        padding: 10px 20px;
-        border-radius: 25px;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        position: relative;
-        text-transform: capitalize;
-  
-        &:hover,
-        &:focus {
-          background-color: $navbar-hover;
-          color: $navbar-text-color;
-        }
-  
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 0;
-          height: 3px;
-          background-color: white;
-          transition: width 0.3s ease;
-          transform: translateX(-50%);
-        }
-  
-        &:hover:after {
-          width: 100%;
-        }
-      }
-    }
-  
-    /* Menú desplegable */
-    .dropdown {
-      position: relative;
-  
-      .dropbtn {
-        background-color: $navbar-bg;
-        color: $navbar-text-color;
-        border: none;
-        padding: 10px 20px;
-        font-size: 1.1rem;
-        font-weight: 500;
-        border-radius: 25px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, color 0.3s ease;
-  
-        &:hover,
-        &:focus {
-          background-color: $navbar-hover;
-          color: $navbar-text-color;
-        }
-      }
-  
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: $dropdown-bg;
-        min-width: 160px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 5px;
-        padding: 10px 0;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-  
-        a {
-          color: white;
-          padding: 12px 16px;
-          text-decoration: none;
-          font-size: 1rem;
-          font-weight: 400;
-          text-transform: capitalize;
-  
-          &:hover {
-            background-color: $dropdown-hover-bg;
-          }
-        }
-      }
-  
-      &:hover .dropdown-content {
-        display: block;
-        opacity: 1;
-      }
+
+    /* Eliminación de la línea blanca */
+    &:after {
+      content: none;
     }
   }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
+
+  /* Estilo del botón dropdown */
+  .dropdown {
+    position: relative;
+
+    .dropbtn {
+      background-color: $navbar-bg;
+      color: $navbar-text-color;
+      border: none;
       padding: 10px 20px;
-      gap: 10px;
-    }
-  
-    .logo {
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-    }
-  
-    .menu {
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
-      width: 100%;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-radius: 25px;
+      cursor: pointer;
+      display: flex;
       align-items: center;
-  
-      a {
-        padding: 10px 20px;
-        border-radius: 25px;
-        font-size: 1.2rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      i {
+        margin-right: 8px;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $navbar-hover;
+        color: $navbar-text-color;
       }
     }
-  
+
     .dropdown-content {
-      position: static;
+      display: none;
+      position: absolute;
+      background-color: $dropdown-bg;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 5px;
+      padding: 10px 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 400;
+        text-transform: capitalize;
+
+        &:hover {
+          background-color: $dropdown-hover-bg;
+        }
+      }
+    }
+
+    &:hover .dropdown-content {
+      display: block;
       opacity: 1;
     }
-  
-    .dropdown {
-      width: 100%;
-    }
   }
-  
-  /* Efecto de transición suave */
-  .navbar a,
-  .navbar .dropbtn {
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .navbar a:hover,
-  .navbar .dropbtn:hover {
-    transform: scale(1.05); /* Efecto de zoom suave en hover */
-  }
+}

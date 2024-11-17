@@ -4,3 +4,9 @@
 @use 'footer';
 @use 'productos';
 @use 'contacto';
+@import url('https://fonts.googleapis.com/css2?family=NombreDeLaFuente:wght@400;700&display=swap');
+
+// Luego, aplica la fuente a todo el sitio o al navbar
+body {
+    font-family: 'NombreDeLaFuente', sans-serif;
+}

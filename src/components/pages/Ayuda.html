@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Big Suppli</title>
-    <link rel="stylesheet" href="../CSS/style.css" />
-    <script
-      src="https://kit.fontawesome.com/351810bc77.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="../CSS/main.css" />
   </head>
 
   <body>
@@ -18,127 +14,44 @@
     </header>
     <nav>
       <div class="navbar">
-        <a href="index.html" class="Inicio">
-          <i class="fa fa-home"></i> Inicio</a
-        >
+        <!-- Enlace Inicio -->
+        <a href="index.html" class="inicio">
+          <i class="fa fa-home"></i> Inicio
+        </a>
+    
+        <!-- Menú desplegable sobre Nosotros -->
         <div class="dropdown">
           <button class="dropbtn">
-            <i class="fa fa-address-book" aria-hidden="true"></i>
-            Sobre Nosotros
+            <i class="fa fa-address-book" aria-hidden="true"></i> Sobre Nosotros
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
             <a href="Historia.html">Historia</a>
-            <a href="Historia.html">Historia</a>
-            <a href="Vision.html">Mision y Visión</a>
+            <a href="Vision.html">Misión y Visión</a>
           </div>
         </div>
+    
+        <!-- Enlace Contacto -->
         <a href="Contacto.html">
-          <i class="fa fa-phone-square" aria-hidden="true"></i>
-          Contacto</a
-        >
+          <i class="fa fa-phone-square" aria-hidden="true"></i> Contacto
+        </a>
+    
+        <!-- Enlace Servicio -->
         <a href="servicio.html">
-          <i class="fa fa-handshake-o" aria-hidden="true"></i>Servicio</a
-        >
-        <a href="productos.html"
-          ><i class="fa fa-shopping-cart" aria-hidden="true"></i>Catalogo
-          Productos</a
-        >
-        <a href="Ayuda.html"
-          ><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Ayuda</a
-        >
+          <i class="fa fa-handshake-o" aria-hidden="true"></i> Servicio
+        </a>
+    
+        <!-- Enlace Catalogo Productos -->
+        <a href="productos.html">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i> Catálogo Productos
+        </a>
+    
+        <!-- Enlace Ayuda -->
+        <a href="Ayuda.html">
+          <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Ayuda
+        </a>
       </div>
     </nav>
-    <main>      <div class="ventana-manual">
-      <article>
-        <h1 id="manual"><i class="fa fa-book"></i>Manual de Usuario</h1>
-        <strong><p>
-          Este sitio web esta compuesto por 7 paginas nombradas Inicio, Sobre
-          Nosotros, Contacto, Servico, Catalogo de Productos, y Ayuda.
-        </p></strong>
-        <br />
-        </article>
-        </div>
-        <div class="ventana-manual">
-        <h1>Inicio</h1>
-        <strong>
-        <p>
-          El boton de Inicio es un boton que al dar click sobre el nos envia a
-          la pagina principal, que contiene un resumen en general de lo que es
-          la empresa, que muestran una breve parte de lo que es el catalogo de
-          productos, y muestra una imagen de la fachada principal de la
-          empresa, y un banner con animaciones de la empresa.
-        </p></strong>
-        <br />
-      </article>
-    </div>
-    <div class="ventana-manual">
-      <article>
-        <h1>Sobre Nosotros</h1>
-        <strong><p>
-          el apartado de "Sobre Nosotros" es un menu desplegable que esta
-          dentro de una barra de navegacion, contiene dentro de el menu dos
-          botones, uno de los botones te dirige a una pagina en la que esta
-          plasmada la informacion historica de la empresa y muestra imagenes
-          alucivas a ello.
-        </p></strong>
-      </article>
-    </div>
-    <div class="ventana-manual">
-      <article>
-      <h1>Contacto</h1>
-      <strong><p>
-      El apartado de contacto ubicado en la barra de navegacion, es un boton que nos envia a 
-      una pagina donde se nos presenta un apartado con la informacion de contacto de la empresa como lo es:
-      numero telefonico, Whatsapp, Facebook, Instagram etc...
-    </p>
-    <p>Adicionalmente incluimos un formulario donde se puede mandar
-    mensajes directos a la empresa como una forma de comunicacion
-    directa del sitio web al personal de atencion al cliente. es
-    importante resaltar que aun no esta en funcionamiento solo esta
-    presente como un proyecto a futuro. </p></strong>
-    </article>
-    </div>
-    <div class="ventana-manual">
-      <article>
-        <h1>Servicos</h1>
-        <strong><p>El apartado de servicio es un boton que al dar click
-        sobre el nos envia a una pagina donde mostramos la informacion
-        con respecto a los servicios que ofrece la empresa</p></strong>
-      </article>
-    </div>
-    <div class="ventana-manual">
-      <article>
-        <h1>Catalogo de Productos</h1>
-        <p> <strong>El boton en la barra de navegacion que dice "Catalogo de Productos"
-        nos envia a una pagina donde presentamos los productos que vende la empresa,
-        esta pagina no posee ninguna funcion especial,
-        solo muestra el catalogo de productos</strong></p><br>
-           
-        <h1>Pasos Para Editar el Catalogo de Productos</h1>
-        <ol><strong>
-          <li>Abrir el documento "productos.html" en un compilador de preferencia ya sea Sublimetext o Visual Studio</li>
-          <li>Ubicar estos bloques de codigos ubicado dentro del Main</li>
-          <li>Al ubicar el bloque de codigos podemos apreciar que contiene un titulo una imagen y una descripcion del producto</li>
-          <li>Para cambiar el titulo, debemos ubicar el contenido de la etiqueta "h3" y cambiar el contenido a nuestra preferencia </li>
-          <li>Para cambiar la imagen del producto se debe ubicar la etiqueta "img", y dentro de ella estara un atributo nombrado "SRC" el cual debe llevar la ruta donde esta guardada la imagen nueva que queramos colocar</li>
-          <li>Para cambiar el precio del producto ubicar la etiqueta "p" que tiene la clase "price" y colocar el precio que desee colocar</li>
-        </strong></ol>
-       
-      </article>
-    </div>
-    <div class="ventana-manual">
-      <article>
-        <h1>Botones Especiales <i class="fab fa-facebook-f"> </i  ><i class="fab fa-instagram"> <i class="fab fa-whatsapp"></i
-          ></i></h1>
-        <p><strong>Estos botones estan ubicados en el pie de la pagina,
-        son botenes con el logo de las principales redes sociales de la empresa y al
-        hacer click sobre ellos nos redireccionan a las redes sociales de la empresa</strong></p>
-      </article><br>
-
-      <a  class="boton-descargar" href="../../assets/documents/manual-de-usuario.pdf" download="manual de usuario.pdf">Descargar Manual</a>
-    </div>
-  </main>
     <footer>
       <h4>Contáctenos</h4>
       <p>Teléfono: #######</p>
