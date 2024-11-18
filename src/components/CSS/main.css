@@ -1,294 +1,328 @@
 /* Estilo general */
 
-* {
-  margin: 0;
-  padding: 0;
+ * {
   box-sizing: border-box;
-}
+} 
 
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  margin-top: 60px;
 }
 
-
-/* Encabezado */
-
-.header {
-  width: 100%;
-}
-
-/* Estilo principal del navbar */
 .navbar {
-  background-color: #309BD7;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  border-bottom: 2px solid #2980b9;
-  border-radius: 0 0 20px 25px;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 16px 64px;
+background-color: #309BD7;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
+border-bottom-left-radius: 20px; /* Radio de la esquina inferior izquierda */
+border-bottom-right-radius: 20px; /* Radio de la esquina inferior derecha */
 }
 
 .navbar-logo img {
   height: 50px;
   width: auto;
   transition: transform 0.2s ease;
+  align-items: start;
 }
 
 .navbar-logo img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+} 
+.navbar-link{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  transition: all 0.5 ease;
 }
 
-/* Enlaces del navbar */
-.navbar-item {
-  color: white;
+.navbar-link li{
+  margin-left: 24px;
+}
+
+.navbar-link a{
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 500;
-  text-transform: capitalize;
-  position: relative;
-  transition: background-color 0.3s ease, border-radius 0.3s ease;
+  color: #FFFFFF;
+  font-size: 17px;
+  padding: 8px 24px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
 }
 
-.navbar-item:hover {
+.navbar-link a:hover {
   background-color: #F4991C;
   transform: translateY(-3px);
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
-/* Dropdown del navbar */
-.navbar .dropdown {
+.menu-icon{
+  display: none;
+  flex-direction: column; 
+  cursor: pointer;
+  margin-left: auto;
   position: relative;
-}
-
-.navbar .dropdown .dropbtn {
-  background-color: transparent;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  transition: color 0.3s ease;
-}
-
-.navbar .dropdown:hover .dropbtn {
-  color: #F4991C;
-}
-
-.navbar .dropdown .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #2980b9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  border-radius: 10px;
-  top: 100%;
-  left: 0;
 }
 
-.navbar .dropdown .dropdown-content a {
-  color: white;
-  padding: 1rem;
-  text-decoration: none;
-  display: block;
-  text-transform: capitalize;
-  font-weight: 500;
-}
-
-.navbar .dropdown .dropdown-content a:hover {
-  background-color: #3498db;
-}
-
-.navbar .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Menú hamburguesa */
-.navbar .menu-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 30px;
-  color: white;
-  transition: transform 0.3s ease;
-}
-
-.navbar .menu-toggle:hover {
-  transform: rotate(90deg);
-}
-
-/* Estilos para el checkbox del menú hamburguesa */
-.navbar .menu-toggle-checkbox {
-  display: none;
-}
-
-.navbar .menu-toggle-checkbox:checked + .menu-toggle + .navbar-items {
-  display: block;
-}
-
-.navbar .menu-toggle-checkbox:checked + .menu-toggle {
-  background-color: #309BD7;
-  color: white;
-}
-
-/* Estilos para dispositivos pequeños (pantallas <= 768px) */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  .navbar .logo img {
-    height: 30px;
-    margin-bottom: 1rem;
-  }
-
-  .navbar .navbar-item {
-    width: 100%;
-    text-align: left;
-    padding: 1rem;
-    font-size: 18px;
-    border-bottom: 1px solid #f4f4f9;
-  }
-
-  .navbar .dropdown .dropdown-content {
-    position: static;
-    min-width: 100%;
-    box-shadow: none;
-  }
-
-  .navbar .menu-toggle {
-    display: block;
-    font-size: 40px;
-    color: white;
-  }
-
-  /* Inicialmente ocultamos los elementos del menú */
-  .navbar .navbar-items {
-    display: none;
-    width: 100%;
-  }
-
-  .navbar .navbar-item, .navbar .dropdown .dropbtn {
-    font-size: 18px;
-  }
-
-  /* Estilos de transición para cuando el menú se abre */
-  .navbar .navbar-items {
+.menu-icon .line{
+    width: 30px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 5px;
     transition: all 0.3s ease;
+    border-radius: 5px;
+
+}
+
+#menu-toggle{
+  display: none;
+}
+
+@media(max-width: 768px){
+  .navbar{
+    padding: 16px;
   }
+  .menu-icon{
+    display: flex;
+  }
+
+.navbar-link{
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  flex-direction: column;
+  background-color: #2980b9;
+  text-align: center;
+  transition: heigth 0.5s ease;
+}
+.navbar-link li{
+
+  margin: 0;
+  padding: 20px 0;
+  width: 100%;
 }
 
-/* Títulos */
-h1 {
-  margin: 10px 0;
+.navbar-link a{
+  font-size: 20px;
+  width: 100%;
+  padding: 10px 20px;
 }
 
-h2,
+#menu-toggle:checked + .menu-icon + .navbar-link {
+  height: 100vh;
+}
+
+  #menu-toggle:checked + .menu-icon .line:nth-child(1){
+
+    transform: rotate(45deg) translate(15px, 3px);
+  }
+  #menu-toggle:checked + .menu-icon .line:nth-child(2){
+
+    transform: scale(0);
+  }
+  #menu-toggle:checked + .menu-icon .line:nth-child(3){
+
+    transform: rotate(-45deg) translate(15px, -4px);
+  }
+
+}
+
+#inicio img {
+  
+  width: auto;  /* Mantiene el tamaño original de la imagen */
+  height: auto; /* Mantiene la altura original de la imagen */
+  max-width: none;  /* Evita que la imagen se escale al ancho del contenedor */
+  max-height: none; /* Evita que la imagen se escale al alto del contenedor */
+}
+
+
+/* Estilos simples para h2 y h3 */
+/* Estilos para h2 y h3 - minimalistas y profesionales */
+h2, h3 {
+  margin: 20px 0;  /* Espacio uniforme arriba y abajo */
+  color: #F4991C;  /* Mantener el color naranja para los títulos */
+  font-family: 'Helvetica', sans-serif; /* Tipografía limpia y moderna */
+  font-weight: 600; /* Peso medio para un aspecto profesional */
+  line-height: 1.2; /* Espaciado entre líneas para mayor legibilidad */
+}
+
+/* Tamaño ajustado de las fuentes */
+h2 {
+  font-size: 2rem; /* Un tamaño más grande y profesional para h2 */
+}
+
 h3 {
-  margin-bottom: 10px;
-  color: #F4991C;
+  font-size: 1.3rem; /* Un tamaño más pequeño pero bien destacado para h3 */
 }
+
+/* Eliminar márgenes innecesarios */
+h2, h3 {
+  margin-top: 0;  /* Elimina el margen superior innecesario */
+}
+
+/* Para asegurar consistencia y alineación */
+section h2, section h3 {
+  text-align: left;  /* Alineación a la izquierda para una apariencia más formal */
+}
+
 
 /* Sección principal */
 
+/* Espaciado principal del contenido */
 main {
   padding: 20px;
 }
-.reseña{
+
+/* Estilos para la clase 'reseña' */
+.reseña {
   display: flex;
-  text-align: justify;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #fff;
-  /* Fondo blanco para la ventana */
-  border-radius: 10px;
-  /* Bordes redondeados */
-  padding: 20px;
-  /* Espaciado interno */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  /* Sombra */
-  margin-top: 20px;
-  /* Margen superior para separación */
-  
+  align-items: center;  /* Alineación de elementos verticalmente */
+  background-color: #fff;  /* Fondo blanco para la ventana */
+  border-radius: 12px;  /* Bordes redondeados un poco más suaves */
+  padding: 25px;  /* Espaciado interno refinado */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);  /* Sombra más sutil */
+  margin-top: 30px;  /* Mayor margen superior para mayor separación */
+  gap: 20px;  /* Espaciado entre los elementos internos */
+  transition: transform 0.3s ease;  /* Transición suave para interacciones */
 }
-.reseña img{
+
+/* Añadir una sutil interacción con hover */
+.reseña:hover {
+  transform: translateY(-5px);  /* Efecto de elevar ligeramente al pasar el cursor */
+}
+
+/* Estilos para el texto dentro de la reseña */
+.reseña p {
+  text-align: justify;  /* Justificar el texto para mayor legibilidad */
+  font-family: 'Helvetica', sans-serif;  /* Tipografía limpia y profesional */
+  font-size: 1rem;  /* Tamaño de fuente estándar */
+  line-height: 1.6;  /* Espaciado de línea más abierto */
+  color: #333;  /* Color de texto oscuro para mejorar la legibilidad */
+}
+
+/* Mejora del layout en pantallas pequeñas */
+@media (max-width: 768px) {
+  .reseña {
+    flex-direction: column;  /* Cambiar la dirección a columna para pantallas pequeñas */
+    align-items: flex-start;  /* Alineación a la izquierda */
+  }
+}
+
+/* Estilos para las imágenes dentro de la reseña */
+.reseña img {
   flex: 0 0 auto;
-  margin-right: 10%;
-  height: 40%;
+  margin-right: 20px; /* Mayor espacio entre la imagen y el texto */
+  height: auto;  /* Mantener la relación de aspecto de la imagen */
   width: 40%;
+  border-radius: 8px;  /* Bordes redondeados sutiles para las imágenes */
+  object-fit: cover;  /* Ajustar la imagen sin distorsionarla */
 }
-.reseña p{
-  font-size: 16PX;
-  font-family: Arial, sans-serif;
+
+/* Estilos para los párrafos dentro de la reseña */
+.reseña p {
+  font-size: 1rem;  /* Tamaño de fuente estándar */
+  font-family: 'Arial', sans-serif;
+  margin-right: 5%;
+  margin-top: 10px;  /* Margen superior ajustado para más espacio entre párrafos */
+  line-height: 1.6;  /* Espaciado de línea más abierto */
+  color: #333;  /* Color de texto oscuro para mejor legibilidad */
+  text-align: justify;  /* Justificar el texto para una mejor distribución */
+}
+
+/* Estilos para las listas dentro de noticias */
+.noticias ul {
+  display: flex;
+  flex-direction: column;  /* Organizar las listas verticalmente */
+  justify-content: flex-start;  /* Alinear los elementos al principio */
+  text-align: justify;
+  gap: 10px;  /* Espaciado entre los elementos de la lista */
+}
+
+/* Estilo para los íconos de libros */
+.fa-book {
+  color: #333;  /* Color más oscuro para los iconos */
+  width: 30px;  /* Tamaño ajustado para los iconos */
+  height: 30px;  /* Tamaño ajustado para los iconos */
+  padding: 10px;  /* Relleno para hacerlo más accesible */
+  border-radius: 5px;  /* Bordes redondeados */
+  transition: transform 0.3s ease;  /* Añadir transición suave al pasar el cursor */
+}
+
+.fa-book:hover {
+  transform: scale(1.1);  /* Efecto de agrandar al pasar el cursor */
+}
+
+/* Estilos para los títulos de visión */
+.vision-titulo {
+  text-align: center;
+  font-size: 1.5rem;  /* Tamaño de fuente ajustado */
+  color: #F4991C;  /* Mantener el color naranja */
+  font-weight: bold;  /* Agregar negrita para mayor énfasis */
+  margin-bottom: 20px;  /* Añadir espacio debajo del título */
+}
+
+/* Estilos para la clase 'vision' */
+.vision {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;  /* Alineación vertical de los elementos */
+  background-color: #fff;  /* Fondo blanco */
+  border-radius: 10px;  /* Bordes redondeados */
+  padding: 20px;  /* Espaciado interno */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
+  margin-top: 20px;  /* Margen superior */
+  gap: 20px;  /* Espaciado entre los elementos internos */
+}
+
+/* Estilos para las imágenes dentro de la clase 'vision' */
+.vision img {
+  flex: 0 0 auto;
+  margin-right: 20px;  /* Espacio entre la imagen y el texto */
+  height: auto;  /* Mantener la relación de aspecto */
+  width: 40%;
+  border-radius: 8px;  /* Bordes redondeados */
+  object-fit: cover;  /* Ajuste de la imagen sin distorsionar */
+}
+
+/* Estilos para los párrafos dentro de la clase 'vision' */
+.vision p {
+  font-size: 1.2rem;  /* Tamaño de fuente ajustado */
+  color: #333;  /* Color oscuro para mejorar la legibilidad */
+  font-family: 'Arial', sans-serif;
   margin-right: 5%;
   margin-top: 2%;
+  line-height: 1.6;  /* Espaciado de línea para mejor lectura */
+  text-align: justify;  /* Justificación del texto */
 }
-.noticias ul{
-  align-items: center;
-  text-align: justify;
-  
-}
-.fa-book{
-  color: black;
-  width: 15%;
-  height: 15%;
-  padding: 20px;
-}
-.vision-titulo{
-  text-align: center;
-  font-size: 25px;
-  color: #F4991C;
-}
-.vision{
-display: flex;
-text-align: justify;
-flex-direction: row;
-justify-content: space-between;
-background-color: #fff;
-/* Fondo blanco para la ventana */
-border-radius: 10px;
-/* Bordes redondeados */
-padding: 20px;
-/* Espaciado interno */
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-/* Sombra */
-margin-top: 20px;
-/* Margen superior para separación */
-}
-.vision img{    flex: 0 0 auto;
-  margin-right: 10%;
-  height: 40%;
-  width: 40%;}
-.vision p{
-      font-size: 25PX;
-      color: black;
-      font-family: Arial, sans-serif;
-      margin-right: 5%;
-      margin-top: 2%;
-  
-}
+
 
 /* Contenedor de productos */
 
+/* Contenedor de productos */
 .productos-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-left: 20px;
+  gap: 20px; /* Añadir espacio entre los productos */
 }
 
+/* Estilo para cada producto */
 .producto {
   border: 2px solid gray;
   background-color: #fdfdfd;
@@ -296,33 +330,49 @@ margin-top: 20px;
   margin: 8px;
   padding: 15px;
   border-radius: 20px;
-  flex: 1 1 calc(25% - 20px);
+  flex: 1 1 calc(25% - 20px); /* Ajuste flexible para los productos */
   text-align: center;
-  min-width: 220px;
-  /* Asegura que el producto tenga un ancho mínimo */
+  min-width: 220px; /* Ancho mínimo para los productos */
+  box-sizing: border-box; /* Incluir los bordes y el padding en el tamaño total */
+  transition: transform 0.3s ease-in-out; /* Añadir transición para animación de escala */
 }
 
+.producto:hover {
+  transform: scale(1.05); /* Escala ligeramente el producto cuando el cursor pasa por encima */
+}
+
+/* Estilo para los títulos de los productos */
 .productos-container h3 {
-  color: black; /* Naranja para los títulos */
+  color: black;
   font-size: 18px;
   margin-bottom: 10px;
-  font-family: Cursive;
+  font-family: 'Cursive', sans-serif;
   font-weight: bold;
 }
 
-.productos-container .price{
-  color: #F4991C; /* Naranja para los títulos */
+/* Estilo para los precios */
+.productos-container .price {
+  color: #F4991C; /* Naranja para el precio */
   font-size: 16px;
-  margin-bottom: 1px;
-  font-family: cursive;
+  margin-bottom: 10px; /* Añadir espacio debajo del precio */
+  font-family: 'Cursive', sans-serif;
   font-weight: bold;
-  text-align: lef;
+  text-align: left; /* Corregir el error de 'lef' a 'left' */
 }
 
+/* Estilo para las imágenes dentro de los productos */
 .producto img {
-  border-radius:1px;
-  max-width: 80%;
-  height: 300px;
+  max-width: 100%; /* Asegurar que la imagen ocupe el 100% del ancho disponible */
+  height: auto; /* Mantener la relación de aspecto original de la imagen */
+  border-radius: 10px; /* Bordes redondeados suaves */
+  object-fit: cover; /* Asegurarse de que la imagen se ajuste bien dentro del contenedor sin distorsionarse */
+  display: block; /* Eliminar el espacio debajo de la imagen */
+  margin: 0 auto 15px; /* Centrar la imagen y añadir margen en la parte inferior */
+  transition: transform 0.3s ease-in-out; /* Transición para animación de escala de la imagen */
+}
+
+.producto img:hover {
+  transform: scale(1.1); /* Hace que la imagen crezca un poco al pasar el cursor */
 }
 
 /* Estilo de la ventana con sombra */
@@ -349,19 +399,46 @@ margin-top: 20px;
   /* Opcional: agrega bordes redondeados a la imagen */
 }
 /* Pie de página */
+/* Pie de página */
 footer {
-  background-color: #309BD7;
+  background-color: #309BD7; /* Color base azul */
   color: white;
   text-align: center;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 30px 20px; /* Añadir más espacio alrededor */
+  margin-top: 40px; /* Aumentar el margen superior para separación */
+  border-top: 2px solid #F4991C; /* Añadir una línea de separación en color naranja */
+}
+
+footer p {
+  font-size: 14px; /* Reducir tamaño de texto */
+  margin: 10px 0; /* Espaciado entre los párrafos */
+  font-family: Arial, sans-serif;
+}
+
+footer .social-media {
+  margin-top: 20px; /* Añadir espacio superior para los iconos */
 }
 
 footer .social-media a {
   color: white;
-  margin: 0 10px;
+  margin: 0 15px;
   text-decoration: none;
+  font-size: 20px; /* Tamaño de los iconos */
+  transition: transform 0.3s ease, color 0.3s ease; /* Añadir animaciones para transformación y cambio de color */
 }
+
+footer .social-media a:hover {
+  transform: scale(1.2); /* Aumentar el tamaño de los iconos al pasar el cursor */
+  color: #F4991C; /* Cambiar el color a naranja en hover */
+}
+
+/* Estilo para el copyright */
+footer p.copy {
+  font-size: 12px; /* Ajustar tamaño de texto */
+  color: rgba(255, 255, 255, 0.7); /* Hacer el texto de copyright un poco más tenue */
+  margin-top: 15px;
+}
+
 
 
 /* Medias queries para responsividad */
