@@ -1,16 +1,69 @@
-/* Estilo general */
+/* === Estilos generales === */
 
- * {
+* {
   box-sizing: border-box;
 } 
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;/* Tipografía moderna y limpia */
+  line-height: 1.8;
   margin: 0;
   padding: 0;
   background-color: #f5f5f5;
   margin-top: 60px;
 }
+
+main {
+  padding: 20px;
+}
+
+
+
+/* === Titulos === */
+h1, h2, h3 {
+  color: #309BD7; /* Azul corporativo */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center; /* Centrado principal para h1 */
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 20px; /* Separación entre párrafos */
+  text-align: justify; /* Justificación del texto */
+}
+
+/* Listas generales con la clase .contenido */
+.contenido {
+  list-style-type: none; /* Elimina marcadores predeterminados */
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.contenido li {
+  margin-bottom: 15px; /* Espaciado entre elementos */
+  padding: 10px;
+  background-color: #ffffff; /* Fondo blanco */
+  border-left: 4px solid #F4991C; /* Línea decorativa en la izquierda */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Destacar texto importante */
+strong {
+  color: #309BD7; /* Azul corporativo */
+}
+/* === Navbar === */
 
 .navbar {
 display: flex;
@@ -80,7 +133,6 @@ border-bottom-right-radius: 20px; /* Radio de la esquina inferior derecha */
     margin: 5px;
     transition: all 0.3s ease;
     border-radius: 5px;
-
 }
 
 #menu-toggle{
@@ -136,322 +188,113 @@ border-bottom-right-radius: 20px; /* Radio de la esquina inferior derecha */
 
     transform: rotate(-45deg) translate(15px, -4px);
   }
-
 }
+
+/* === Banner tentativo === */
 
 #inicio img {
-  
-  width: auto;  /* Mantiene el tamaño original de la imagen */
-  height: auto; /* Mantiene la altura original de la imagen */
-  max-width: none;  /* Evita que la imagen se escale al ancho del contenedor */
-  max-height: none; /* Evita que la imagen se escale al alto del contenedor */
+  display: block;       /* Asegura que la imagen no tome espacio adicional como elemento inline */
+  width: 100%;          /* Ajusta el ancho de la imagen al contenedor */
+  height: auto;         /* Mantiene la proporción de la imagen */
+  max-width: 100%;      /* Evita que la imagen sea más grande que el contenedor */
+  max-height: 100%;     /* Asegura que la imagen no exceda la altura del contenedor */
+  object-fit: contain;  /* Mantiene la proporción de la imagen dentro del contenedor */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;  /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.productos {
+  display: flex; /* Habilita Flexbox */
+  flex-wrap: wrap; /* Permite que los elementos salten a la siguiente fila */
+  gap: 16px; /* Espacio entre los elementos */
+  justify-content: center; /* Opcional: centra los productos horizontalmente */
 }
 
 
-/* Estilos simples para h2 y h3 */
-/* Estilos para h2 y h3 - minimalistas y profesionales */
-h2, h3 {
-  margin: 20px 0;  /* Espacio uniforme arriba y abajo */
-  color: #F4991C;  /* Mantener el color naranja para los títulos */
-  font-family: 'Helvetica', sans-serif; /* Tipografía limpia y moderna */
-  font-weight: 600; /* Peso medio para un aspecto profesional */
-  line-height: 1.2; /* Espaciado entre líneas para mayor legibilidad */
+.product-card {
+  width: 300px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Aseguramos que en móviles la imagen esté arriba */
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  border: 0.1px solid #000;
 }
 
-/* Tamaño ajustado de las fuentes */
-h2 {
-  font-size: 2rem; /* Un tamaño más grande y profesional para h2 */
+.product-card:hover {
+  transform: scale(1.005);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-h3 {
-  font-size: 1.3rem; /* Un tamaño más pequeño pero bien destacado para h3 */
+.product-card .product-image {
+  width: 100%; /* Asegura que la imagen ocupe el 100% del ancho */
+  height: 300px; /* Ajustamos la altura */
 }
 
-/* Eliminar márgenes innecesarios */
-h2, h3 {
-  margin-top: 0;  /* Elimina el margen superior innecesario */
+.product-card .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
 }
 
-/* Para asegurar consistencia y alineación */
-section h2, section h3 {
-  text-align: left;  /* Alineación a la izquierda para una apariencia más formal */
+.product-description {
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.product-description h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.product-description p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Responsive Design para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .product-card {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .product-description {
+    text-align: center; /* Aseguramos que el texto se vea bien en móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-card .product-image {
+    height: 180px; /* Ajustamos la imagen a un tamaño más pequeño en pantallas muy pequeñas */
+  }
+
+  .product-description h3 {
+    font-size: 1.2rem;
+  }
+
+  .product-description p {
+    font-size: 0.9rem;
+  }
 }
 
 
 /* Sección principal */
 
 /* Espaciado principal del contenido */
-main {
-  padding: 20px;
-}
 
-/* Estilos para la clase 'reseña' */
-.reseña {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;  /* Alineación de elementos verticalmente */
-  background-color: #fff;  /* Fondo blanco para la ventana */
-  border-radius: 12px;  /* Bordes redondeados un poco más suaves */
-  padding: 25px;  /* Espaciado interno refinado */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);  /* Sombra más sutil */
-  margin-top: 30px;  /* Mayor margen superior para mayor separación */
-  gap: 20px;  /* Espaciado entre los elementos internos */
-  transition: transform 0.3s ease;  /* Transición suave para interacciones */
-}
-
-/* Añadir una sutil interacción con hover */
-.reseña:hover {
-  transform: translateY(-5px);  /* Efecto de elevar ligeramente al pasar el cursor */
-}
-
-/* Estilos para el texto dentro de la reseña */
-.reseña p {
-  text-align: justify;  /* Justificar el texto para mayor legibilidad */
-  font-family: 'Helvetica', sans-serif;  /* Tipografía limpia y profesional */
-  font-size: 1rem;  /* Tamaño de fuente estándar */
-  line-height: 1.6;  /* Espaciado de línea más abierto */
-  color: #333;  /* Color de texto oscuro para mejorar la legibilidad */
-}
-
-/* Mejora del layout en pantallas pequeñas */
-@media (max-width: 768px) {
-  .reseña {
-    flex-direction: column;  /* Cambiar la dirección a columna para pantallas pequeñas */
-    align-items: flex-start;  /* Alineación a la izquierda */
-  }
-}
-
-/* Estilos para las imágenes dentro de la reseña */
-.reseña img {
-  flex: 0 0 auto;
-  margin-right: 20px; /* Mayor espacio entre la imagen y el texto */
-  height: auto;  /* Mantener la relación de aspecto de la imagen */
-  width: 40%;
-  border-radius: 8px;  /* Bordes redondeados sutiles para las imágenes */
-  object-fit: cover;  /* Ajustar la imagen sin distorsionarla */
-}
-
-/* Estilos para los párrafos dentro de la reseña */
-.reseña p {
-  font-size: 1rem;  /* Tamaño de fuente estándar */
-  font-family: 'Arial', sans-serif;
-  margin-right: 5%;
-  margin-top: 10px;  /* Margen superior ajustado para más espacio entre párrafos */
-  line-height: 1.6;  /* Espaciado de línea más abierto */
-  color: #333;  /* Color de texto oscuro para mejor legibilidad */
-  text-align: justify;  /* Justificar el texto para una mejor distribución */
-}
-
-/* Estilos para las listas dentro de noticias */
-.noticias ul {
-  display: flex;
-  flex-direction: column;  /* Organizar las listas verticalmente */
-  justify-content: flex-start;  /* Alinear los elementos al principio */
-  text-align: justify;
-  gap: 10px;  /* Espaciado entre los elementos de la lista */
-}
-
-/* Estilo para los íconos de libros */
-.fa-book {
-  color: #333;  /* Color más oscuro para los iconos */
-  width: 30px;  /* Tamaño ajustado para los iconos */
-  height: 30px;  /* Tamaño ajustado para los iconos */
-  padding: 10px;  /* Relleno para hacerlo más accesible */
-  border-radius: 5px;  /* Bordes redondeados */
-  transition: transform 0.3s ease;  /* Añadir transición suave al pasar el cursor */
-}
-
-.fa-book:hover {
-  transform: scale(1.1);  /* Efecto de agrandar al pasar el cursor */
-}
-
-/* Estilos para los títulos de visión */
-.vision-titulo {
-  text-align: center;
-  font-size: 1.5rem;  /* Tamaño de fuente ajustado */
-  color: #F4991C;  /* Mantener el color naranja */
-  font-weight: bold;  /* Agregar negrita para mayor énfasis */
-  margin-bottom: 20px;  /* Añadir espacio debajo del título */
-}
-
-/* Estilos para la clase 'vision' */
-.vision {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;  /* Alineación vertical de los elementos */
-  background-color: #fff;  /* Fondo blanco */
-  border-radius: 10px;  /* Bordes redondeados */
-  padding: 20px;  /* Espaciado interno */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
-  margin-top: 20px;  /* Margen superior */
-  gap: 20px;  /* Espaciado entre los elementos internos */
-}
-
-/* Estilos para las imágenes dentro de la clase 'vision' */
-.vision img {
-  flex: 0 0 auto;
-  margin-right: 20px;  /* Espacio entre la imagen y el texto */
-  height: auto;  /* Mantener la relación de aspecto */
-  width: 40%;
-  border-radius: 8px;  /* Bordes redondeados */
-  object-fit: cover;  /* Ajuste de la imagen sin distorsionar */
-}
-
-/* Estilos para los párrafos dentro de la clase 'vision' */
-.vision p {
-  font-size: 1.2rem;  /* Tamaño de fuente ajustado */
-  color: #333;  /* Color oscuro para mejorar la legibilidad */
-  font-family: 'Arial', sans-serif;
-  margin-right: 5%;
-  margin-top: 2%;
-  line-height: 1.6;  /* Espaciado de línea para mejor lectura */
-  text-align: justify;  /* Justificación del texto */
-}
-
-
-/* Contenedor de productos */
-
-/* Contenedor de productos */
-.productos-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-left: 20px;
-  gap: 20px; /* Añadir espacio entre los productos */
-}
-
-/* Estilo para cada producto */
-.producto {
-  border: 2px solid gray;
-  background-color: #fdfdfd;
-  color: #F4991C;
-  margin: 8px;
-  padding: 15px;
-  border-radius: 20px;
-  flex: 1 1 calc(25% - 20px); /* Ajuste flexible para los productos */
-  text-align: center;
-  min-width: 220px; /* Ancho mínimo para los productos */
-  box-sizing: border-box; /* Incluir los bordes y el padding en el tamaño total */
-  transition: transform 0.3s ease-in-out; /* Añadir transición para animación de escala */
-}
-
-.producto:hover {
-  transform: scale(1.05); /* Escala ligeramente el producto cuando el cursor pasa por encima */
-}
-
-/* Estilo para los títulos de los productos */
-.productos-container h3 {
-  color: black;
-  font-size: 18px;
-  margin-bottom: 10px;
-  font-family: 'Cursive', sans-serif;
-  font-weight: bold;
-}
-
-/* Estilo para los precios */
-.productos-container .price {
-  color: #F4991C; /* Naranja para el precio */
-  font-size: 16px;
-  margin-bottom: 10px; /* Añadir espacio debajo del precio */
-  font-family: 'Cursive', sans-serif;
-  font-weight: bold;
-  text-align: left; /* Corregir el error de 'lef' a 'left' */
-}
-
-/* Estilo para las imágenes dentro de los productos */
-.producto img {
-  max-width: 100%; /* Asegurar que la imagen ocupe el 100% del ancho disponible */
-  height: auto; /* Mantener la relación de aspecto original de la imagen */
-  border-radius: 10px; /* Bordes redondeados suaves */
-  object-fit: cover; /* Asegurarse de que la imagen se ajuste bien dentro del contenedor sin distorsionarse */
-  display: block; /* Eliminar el espacio debajo de la imagen */
-  margin: 0 auto 15px; /* Centrar la imagen y añadir margen en la parte inferior */
-  transition: transform 0.3s ease-in-out; /* Transición para animación de escala de la imagen */
-}
-
-.producto img:hover {
-  transform: scale(1.1); /* Hace que la imagen crezca un poco al pasar el cursor */
-}
-
-/* Estilo de la ventana con sombra */
-
-.ventana {
-  background-color: #fff;
-  /* Fondo blanco para la ventana */
-  border-radius: 10px;
-  /* Bordes redondeados */
-  padding: 20px;
-  /* Espaciado interno */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  /* Sombra */
-  margin-top: 20px;
-  /* Margen superior para separación */
-}
-
-.ventana img {
-  width: 100%;
-  /* Asegura que la imagen ocupe el 100% del ancho del contenedor */
-  height: 500px;
-  /* Mantiene la proporción de la imagen */
-  border-radius: 8px;
-  /* Opcional: agrega bordes redondeados a la imagen */
-}
-/* Pie de página */
-/* Pie de página */
-footer {
-  background-color: #309BD7; /* Color base azul */
-  color: white;
-  text-align: center;
-  padding: 30px 20px; /* Añadir más espacio alrededor */
-  margin-top: 40px; /* Aumentar el margen superior para separación */
-  border-top: 2px solid #F4991C; /* Añadir una línea de separación en color naranja */
-}
-
-footer p {
-  font-size: 14px; /* Reducir tamaño de texto */
-  margin: 10px 0; /* Espaciado entre los párrafos */
-  font-family: Arial, sans-serif;
-}
-
-footer .social-media {
-  margin-top: 20px; /* Añadir espacio superior para los iconos */
-}
-
-footer .social-media a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-size: 20px; /* Tamaño de los iconos */
-  transition: transform 0.3s ease, color 0.3s ease; /* Añadir animaciones para transformación y cambio de color */
-}
-
-footer .social-media a:hover {
-  transform: scale(1.2); /* Aumentar el tamaño de los iconos al pasar el cursor */
-  color: #F4991C; /* Cambiar el color a naranja en hover */
-}
-
-/* Estilo para el copyright */
-footer p.copy {
-  font-size: 12px; /* Ajustar tamaño de texto */
-  color: rgba(255, 255, 255, 0.7); /* Hacer el texto de copyright un poco más tenue */
-  margin-top: 15px;
-}
-
-
-
-/* Medias queries para responsividad */
-@media (max-width: 768px) {
-  .producto {
-      flex: 1 1 calc(50% - 20px);
-  }
-}
-@media (max-width: 480px) {
-  .producto {
-      flex: 1 1 100%;
-  }
-}
 
 /* Sección de contacto */
 
@@ -537,53 +380,57 @@ footer p.copy {
   font-size: 20px;
 }
 
-/* Estilos del banner */
-.banner {
-  width: 100%; /* Ancho completo */
-  height: 60vh; /* Altura relativa más alta */
-  overflow: hidden;
-  position: relative;
-  padding-top: 500px; /* Más espacio superior */
-  margin-top: 80px;
-  display: flex; /* Centrado del contenido */
-  align-items: center; /* Centrar verticalmente */
-  justify-content: center; /* Centrar horizontalmente */
-  border-radius: 30px; /* Aumenta la curvatura de las esquinas */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
-  background-color: #f5f5f5; /* Fondo neutro para resaltar las imágenes */
+
+/* === Footer === */
+footer {
+  background-color: #309BD7; /* Color base azul */
+  color: white;
+  text-align: center;
+  padding: 30px 20px; /* Añadir más espacio alrededor */
+  margin-top: 40px; /* Aumentar el margen superior para separación */
+  border-top: 2px solid #F4991C; /* Añadir una línea de separación en color naranja */
 }
 
-/* Imágenes del banner */
-.banner img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Ajusta al ancho del contenedor */
-  height: 100%; /* Ajusta al alto del contenedor */
-  object-fit: contain; /* Mantiene la proporción sin recorte */
-  opacity: 0; /* Inicialmente oculta */
-  transition: opacity 1s ease-in-out; /* Suaviza la transición de visibilidad */
+footer p {
+  font-size: 14px; /* Reducir tamaño de texto */
+  margin: 10px 0; /* Espaciado entre los párrafos */
+  font-family: Arial, sans-serif;
 }
 
-/* Animaciones para cada imagen */
-.imagen1 {
-  animation: slide 10s infinite 10s;
+footer .social-media {
+  margin-top: 20px; /* Añadir espacio superior para los iconos */
 }
 
-.imagen2 {
-  animation: slide 10s infinite 10s;
+footer .social-media a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 20px; /* Tamaño de los iconos */
+  transition: transform 0.3s ease, color 0.3s ease; /* Añadir animaciones para transformación y cambio de color */
 }
 
-.imagen3 {
-  animation: slide 10s infinite 10s;
+footer .social-media a:hover {
+  transform: scale(1.2); /* Aumentar el tamaño de los iconos al pasar el cursor */
+  color: #F4991C; /* Cambiar el color a naranja en hover */
 }
 
-/* Keyframes para la animación */
-@keyframes slide {
-  0%, 33.33% {
-    opacity: 1; /* Imagen visible */
+/* Estilo para el copyright */
+footer p.copy {
+  font-size: 12px; /* Ajustar tamaño de texto */
+  color: rgba(255, 255, 255, 0.7); /* Hacer el texto de copyright un poco más tenue */
+  margin-top: 15px;
+}
+
+
+
+/* Medias queries para responsividad */
+@media (max-width: 768px) {
+  .producto {
+      flex: 1 1 calc(50% - 20px);
   }
-  66.67%, 100% {
-    opacity: 0; /* Imagen oculta */
+}
+@media (max-width: 480px) {
+  .producto {
+      flex: 1 1 100%;
   }
 }
