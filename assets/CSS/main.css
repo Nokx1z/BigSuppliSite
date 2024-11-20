@@ -17,7 +17,10 @@ main {
   padding: 20px;
 }
 
-
+.catalogo {
+  text-align: center;
+  justify-content: center;
+}
 
 /* === Titulos === */
 h1, h2, h3 {
@@ -39,8 +42,8 @@ h3 {
 }
 
 .contenido p {
-  font-family: 'Roboto Slab', serif; /* Cambia a una fuente más elegante */
-  font-size: 1.5rem; /* Aumenta el tamaño del texto */
+  font-family: 'Roboto', sans-serif; /* Cambia a una fuente más elegante */
+  font-size: 1.2rem; /* Aumenta el tamaño del texto */
   color: #333; /* Cambia a un tono más oscuro para mayor legibilidad */
   line-height: 1.8; /* Mejora el espacio entre líneas */
   margin-bottom: 1.5rem; /* Agrega mayor separación entre párrafos */
@@ -54,6 +57,7 @@ h3 {
 }
 
 .contenido li {
+  list-style: none;
   margin-bottom: 15px; /* Espaciado entre elementos */
   padding: 10px;
   background-color: #ffffff; /* Fondo blanco */
@@ -65,6 +69,45 @@ h3 {
 strong {
   color: #309BD7; /* Azul corporativo */
 }
+
+
+
+/* Estilo del contenedor */
+.btn-container {
+  width: 200px; /* Ancho del contenedor */
+  margin: 50px auto; /* Centrado horizontal con margen superior */
+  text-align: center; /* Centra el botón dentro del contenedor */
+}
+
+.btn-container a{
+  text-decoration: none;
+  color: white;
+}
+
+/* Estilos del botón */
+.btn {
+  background-color: #F4991C; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  border: none; /* Sin bordes */
+  border-radius: 6px; /* Bordes redondeados */
+  padding: 8px 16px; /* Tamaño del botón */
+  font-size: 25px; /* Tamaño del texto */
+  font-family: 'Arial', sans-serif; /* Fuente */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: all 0.2s ease; /* Transición suave */
+}
+
+/* Efecto hover */
+.btn:hover {
+  background-color: #ff7b00; /* Cambia el color al pasar el cursor */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Incrementa la sombra */
+}
+
+/* Efecto activo */
+.btn:active {
+  transform: scale(0.97); /* Ligero efecto de pulsación */
+}
+
 /* === Navbar === */
 
 .navbar {
@@ -78,8 +121,8 @@ top: 0;
 left: 0;
 width: 100%;
 z-index: 1000;
-border-bottom-left-radius: 20px; /* Radio de la esquina inferior izquierda */
-border-bottom-right-radius: 20px; /* Radio de la esquina inferior derecha */
+border-bottom-left-radius: 0; /* Radio de la esquina inferior izquierda */
+border-bottom-right-radius: 0; /* Radio de la esquina inferior derecha */
 }
 
 .navbar-logo img {
@@ -291,13 +334,6 @@ border-bottom-right-radius: 20px; /* Radio de la esquina inferior derecha */
     font-size: 0.9rem;
   }
 }
-
-
-/* Sección principal */
-
-/* Espaciado principal del contenido */
-
-
 /* Sección de contacto */
 
 #contacto {
@@ -385,45 +421,65 @@ border-bottom-right-radius: 20px; /* Radio de la esquina inferior derecha */
 
 /* === Footer === */
 footer {
-  background-color: #309BD7; /* Color base azul */
+  background-color: #020e2a; /* Color de fondo oscuro */
   color: white;
-  text-align: center;
-  padding: 30px 20px; /* Añadir más espacio alrededor */
-  margin-top: 40px; /* Aumentar el margen superior para separación */
-  border-top: 2px solid #F4991C; /* Añadir una línea de separación en color naranja */
+  padding: 20px 40px; /* Menos padding para hacer el footer más compacto */
+  margin-top: 20px;
+  border-top: 3px solid #F4991C; /* Línea naranja */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea todo al centro */
+  justify-content: center; /* Centra el contenido verticalmente */
+  text-align: center; /* Alinea el texto al centro */
 }
 
-footer p {
-  font-size: 14px; /* Reducir tamaño de texto */
-  margin: 10px 0; /* Espaciado entre los párrafos */
-  font-family: Arial, sans-serif;
+footer .footer-info {
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px;
+}
+
+footer .footer-info h4 {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+footer .footer-info p {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+footer .footer-info p i {
+  margin-right: 5px;
 }
 
 footer .social-media {
-  margin-top: 20px; /* Añadir espacio superior para los iconos */
+  display: flex;
+  gap: 15px;
+  justify-content: center; /* Centra las redes sociales horizontalmente */
+  margin-bottom: 20px;
 }
 
 footer .social-media a {
   color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-size: 20px; /* Tamaño de los iconos */
-  transition: transform 0.3s ease, color 0.3s ease; /* Añadir animaciones para transformación y cambio de color */
+  font-size: 18px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 footer .social-media a:hover {
-  transform: scale(1.2); /* Aumentar el tamaño de los iconos al pasar el cursor */
-  color: #F4991C; /* Cambiar el color a naranja en hover */
+  transform: scale(1.2);
+  color: #F4991C;
 }
 
-/* Estilo para el copyright */
-footer p.copy {
-  font-size: 12px; /* Ajustar tamaño de texto */
-  color: rgba(255, 255, 255, 0.7); /* Hacer el texto de copyright un poco más tenue */
-  margin-top: 15px;
+footer .copy {
+  font-size: 14px; /* Aumenta el tamaño del texto */
+  color: #fdfdfd; /* Resalta el texto con un color contrastante */
+  text-align: center; /* Asegura que el texto esté centrado */
+  width: 100%;
+  padding-top: 15px;
+  border-top: 2px solid #F4991C; /* Línea sutil para separar */
+  margin-top: 20px;
 }
-
-
 
 /* Medias queries para responsividad */
 @media (max-width: 768px) {
