@@ -38,12 +38,14 @@ h3 {
   font-size: 1.5rem;
 }
 
-p {
-  font-size: 1rem;
-  margin-bottom: 20px; /* Separación entre párrafos */
-  text-align: justify; /* Justificación del texto */
+.contenido p {
+  font-family: 'Roboto Slab', serif; /* Cambia a una fuente más elegante */
+  font-size: 1.5rem; /* Aumenta el tamaño del texto */
+  color: #333; /* Cambia a un tono más oscuro para mayor legibilidad */
+  line-height: 1.8; /* Mejora el espacio entre líneas */
+  margin-bottom: 1.5rem; /* Agrega mayor separación entre párrafos */
+  text-align: justify; /* Opcional: Justifica el texto */
 }
-
 /* Listas generales con la clase .contenido */
 .contenido {
   list-style-type: none; /* Elimina marcadores predeterminados */
@@ -192,7 +194,7 @@ border-bottom-right-radius: 20px; /* Radio de la esquina inferior derecha */
 
 /* === Banner tentativo === */
 
-#inicio img {
+.banner img{
   display: block;       /* Asegura que la imagen no tome espacio adicional como elemento inline */
   width: 100%;          /* Ajusta el ancho de la imagen al contenedor */
   height: auto;         /* Mantiene la proporción de la imagen */
