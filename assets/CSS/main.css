@@ -418,6 +418,11 @@ border-bottom-right-radius: 0; /* Radio de la esquina inferior derecha */
   font-size: 20px;
 }
 
+.contacto-container .social-media a:hover {
+  transform: scale(1.2);
+  color: #F4991C;
+}
+
 
 /* === Footer === */
 footer {
