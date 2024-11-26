@@ -5,7 +5,7 @@
 } 
 
 body {
-  font-family: 'Roboto', sans-serif;/* Tipografía moderna y limpia */
+  font-family: 'Roboto', sans-serif;
   line-height: 1.8;
   margin: 0;
   padding: 0;
@@ -24,13 +24,13 @@ main {
 
 /* === Titulos === */
 h1, h2, h3 {
-  color: #309BD7; /* Azul corporativo */
-  margin-bottom: 20px; /* Espaciado inferior */
+  color: #309BD7;
+  margin-bottom: 20px; /* Espaciado de abajo <3 */
 }
 
 h1 {
   font-size: 2.5rem;
-  text-align: center; /* Centrado principal para h1 */
+  text-align: center; 
 }
 
 h2 {
@@ -42,16 +42,15 @@ h3 {
 }
 
 .contenido p {
-  font-family: 'Roboto', sans-serif; /* Cambia a una fuente más elegante */
-  font-size: 1.2rem; /* Aumenta el tamaño del texto */
-  color: #333; /* Cambia a un tono más oscuro para mayor legibilidad */
+  font-family: 'Roboto', sans-serif; 
+  font-size: 1.2rem; 
+  color: #333; 
   line-height: 1.8; /* Mejora el espacio entre líneas */
-  margin-bottom: 1.5rem; /* Agrega mayor separación entre párrafos */
-  text-align: justify; /* Opcional: Justifica el texto */
+  margin-bottom: 1.5rem; 
+  text-align: justify; 
 }
-/* Listas generales con la clase .contenido */
 .contenido {
-  list-style-type: none; /* Elimina marcadores predeterminados */
+  list-style-type: none; 
   padding: 0;
   margin-bottom: 20px;
 }
@@ -62,19 +61,18 @@ h3 {
   padding: 10px;
   background-color: #ffffff; /* Fondo blanco */
   border-left: 4px solid #F4991C; /* Línea decorativa en la izquierda */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
-/* Destacar texto importante */
 strong {
-  color: #309BD7; /* Azul corporativo */
+  color: #F4991C; 
 }
 
 
 
 /* Estilo del contenedor */
 .btn-container {
-  width: 200px; /* Ancho del contenedor */
+  width: 200px;
   margin: 50px auto; /* Centrado horizontal con margen superior */
   text-align: center; /* Centra el botón dentro del contenedor */
 }
@@ -86,24 +84,23 @@ strong {
 
 /* Estilos del botón */
 .btn {
-  background-color: #F4991C; /* Color de fondo */
-  color: #fff; /* Color del texto */
-  border: none; /* Sin bordes */
-  border-radius: 6px; /* Bordes redondeados */
-  padding: 8px 16px; /* Tamaño del botón */
-  font-size: 25px; /* Tamaño del texto */
-  font-family: 'Arial', sans-serif; /* Fuente */
-  cursor: pointer; /* Cambia el cursor al pasar por encima */
-  transition: all 0.2s ease; /* Transición suave */
+  background-color: #F4991C; 
+  color: #fff; 
+  border: none; 
+  border-radius: 6px; 
+  padding: 8px 16px; 
+  font-size: 25px; 
+  font-family: 'Arial', sans-serif; 
+  cursor: pointer; 
+  transition: all 0.2s ease;
 }
 
 /* Efecto hover */
 .btn:hover {
-  background-color: #ff7b00; /* Cambia el color al pasar el cursor */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Incrementa la sombra */
+  background-color: #ff7b00; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
 }
 
-/* Efecto activo */
 .btn:active {
   transform: scale(0.97); /* Ligero efecto de pulsación */
 }
